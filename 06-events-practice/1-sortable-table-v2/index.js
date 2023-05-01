@@ -1,22 +1,16 @@
-/**
- * @typedef HeaderConfig
- * @property {string} id
- * @property {string} title
- * @property {boolean} sortable
- * @property {string} sortType
- * @property template
- */
-
 export default class SortableTable {
   element = null;
   subElements = null;
-
-  constructor(headerConfig = [], data = []) {
+  constructor(headersConfig, {
+    data = [],
+    sorted = {}
+  } = {}) {
     this.headerConfig = headerConfig;
     this.data = data;
 
     this.initTable();
   }
+
 
   initTable() {
     const wrapper = document.createElement('div');
@@ -141,4 +135,3 @@ export default class SortableTable {
     }
   }
 }
-
